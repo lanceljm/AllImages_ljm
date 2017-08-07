@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'allkindsImages' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for allkindsImages
+
+    #弹窗
+    pod "SVProgressHUD"
+
+    #网络
+    pod "AFNetworking"
+
+    #加载图片
+    pod "SDWebImage"
+
+    #刷新
+    pod "MJRefresh"
+
+
+end
