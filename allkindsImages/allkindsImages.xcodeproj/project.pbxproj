@@ -13,6 +13,8 @@
 		1A2CB1FD1F3910F70060FDEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CB1FB1F3910F70060FDEA /* Main.storyboard */; };
 		1A2CB1FF1F3910F70060FDEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CB1FE1F3910F70060FDEA /* Assets.xcassets */; };
 		1A2CB2021F3910F70060FDEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CB2001F3910F70060FDEA /* LaunchScreen.storyboard */; };
+		1A2CB20E1F39183D0060FDEA /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CB20D1F39183D0060FDEA /* NetworkTools.m */; };
+		1A2CB2111F391A020060FDEA /* TextHighTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CB2101F391A020060FDEA /* TextHighTools.m */; };
 		DA261D5FBFF7DDA2520E5903 /* libPods-allkindsImages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F14DDF79E005CD2C1CDB391 /* libPods-allkindsImages.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,12 @@
 		1A2CB1FE1F3910F70060FDEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2CB2011F3910F70060FDEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A2CB2031F3910F70060FDEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A2CB20C1F39183D0060FDEA /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
+		1A2CB20D1F39183D0060FDEA /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
+		1A2CB20F1F391A020060FDEA /* TextHighTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextHighTools.h; sourceTree = "<group>"; };
+		1A2CB2101F391A020060FDEA /* TextHighTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextHighTools.m; sourceTree = "<group>"; };
+		1A2CB2131F3964370060FDEA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1A2CB2141F39F4280060FDEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9F14DDF79E005CD2C1CDB391 /* libPods-allkindsImages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-allkindsImages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76107C554CEFD9DAE4C9F94 /* Pods-allkindsImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allkindsImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-allkindsImages/Pods-allkindsImages.release.xcconfig"; sourceTree = "<group>"; };
 		DF1F6B27C9ED650A44363C9C /* Pods-allkindsImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allkindsImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-allkindsImages/Pods-allkindsImages.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +55,7 @@
 		01793412F971486B252142EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A2CB2141F39F4280060FDEA /* CoreGraphics.framework */,
 				9F14DDF79E005CD2C1CDB391 /* libPods-allkindsImages.a */,
 			);
 			name = Frameworks;
@@ -73,14 +82,7 @@
 		1A2CB1F11F3910F70060FDEA /* allkindsImages */ = {
 			isa = PBXGroup;
 			children = (
-				1A2CB1F51F3910F70060FDEA /* AppDelegate.h */,
-				1A2CB1F61F3910F70060FDEA /* AppDelegate.m */,
-				1A2CB1F81F3910F70060FDEA /* ViewController.h */,
-				1A2CB1F91F3910F70060FDEA /* ViewController.m */,
-				1A2CB1FB1F3910F70060FDEA /* Main.storyboard */,
-				1A2CB1FE1F3910F70060FDEA /* Assets.xcassets */,
-				1A2CB2001F3910F70060FDEA /* LaunchScreen.storyboard */,
-				1A2CB2031F3910F70060FDEA /* Info.plist */,
+				1A2CB2091F3917D80060FDEA /* classes */,
 				1A2CB1F21F3910F70060FDEA /* Supporting Files */,
 			);
 			path = allkindsImages;
@@ -92,6 +94,50 @@
 				1A2CB1F31F3910F70060FDEA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A2CB2091F3917D80060FDEA /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				1A2CB2121F3964230060FDEA /* others */,
+				1A2CB20B1F3918180060FDEA /* tools */,
+				1A2CB20A1F3917FC0060FDEA /* systemfiles */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
+		1A2CB20A1F3917FC0060FDEA /* systemfiles */ = {
+			isa = PBXGroup;
+			children = (
+				1A2CB1F51F3910F70060FDEA /* AppDelegate.h */,
+				1A2CB1F61F3910F70060FDEA /* AppDelegate.m */,
+				1A2CB1F81F3910F70060FDEA /* ViewController.h */,
+				1A2CB1F91F3910F70060FDEA /* ViewController.m */,
+				1A2CB1FB1F3910F70060FDEA /* Main.storyboard */,
+				1A2CB1FE1F3910F70060FDEA /* Assets.xcassets */,
+				1A2CB2001F3910F70060FDEA /* LaunchScreen.storyboard */,
+				1A2CB2031F3910F70060FDEA /* Info.plist */,
+			);
+			name = systemfiles;
+			sourceTree = "<group>";
+		};
+		1A2CB20B1F3918180060FDEA /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				1A2CB20C1F39183D0060FDEA /* NetworkTools.h */,
+				1A2CB20D1F39183D0060FDEA /* NetworkTools.m */,
+				1A2CB20F1F391A020060FDEA /* TextHighTools.h */,
+				1A2CB2101F391A020060FDEA /* TextHighTools.m */,
+			);
+			name = tools;
+			sourceTree = "<group>";
+		};
+		1A2CB2121F3964230060FDEA /* others */ = {
+			isa = PBXGroup;
+			children = (
+				1A2CB2131F3964370060FDEA /* PrefixHeader.pch */,
+			);
+			name = others;
 			sourceTree = "<group>";
 		};
 		80C81FB7053F89FE14A47109 /* Pods */ = {
@@ -226,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2CB20E1F39183D0060FDEA /* NetworkTools.m in Sources */,
 				1A2CB1FA1F3910F70060FDEA /* ViewController.m in Sources */,
 				1A2CB1F71F3910F70060FDEA /* AppDelegate.m in Sources */,
 				1A2CB1F41F3910F70060FDEA /* main.m in Sources */,
+				1A2CB2111F391A020060FDEA /* TextHighTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +400,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W7MQ5T8GZP;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/allkindsImages/PrefixHeader.pch";
 				INFOPLIST_FILE = allkindsImages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ljm.ynyx.allkindsImages;
@@ -365,6 +415,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W7MQ5T8GZP;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/allkindsImages/PrefixHeader.pch";
 				INFOPLIST_FILE = allkindsImages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ljm.ynyx.allkindsImages;
@@ -391,6 +443,7 @@
 				1A2CB2081F3910F70060FDEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
