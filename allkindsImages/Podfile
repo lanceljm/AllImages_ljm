@@ -22,6 +22,12 @@ target 'allkindsImages' do
     
     #头部控件
     pod "VTMagic"
+    
+    #约束
+    pod "Masonry"
+    
+    #模型转换
+    pod "MJExtension"
 
 
 end

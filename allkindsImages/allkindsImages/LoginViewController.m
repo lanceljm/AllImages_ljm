@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "HOMEVC.h"
 
 @interface LoginViewController ()
 
@@ -26,7 +27,10 @@
 #pragma mark -- dismiss vc
 - (void) dismissvc:(id)sender
 {
-  
+    [self presentViewController:[HOMEVC new] animated:YES completion:nil];
+    
+    [self.view removeFromSuperview];
+    [self removeFromParentViewController];
 }
 
 @end

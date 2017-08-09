@@ -9,9 +9,53 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+/*
+ *
+ *  网络请求一定不能忘记配置plist文件：App Transport Security Settings --> Allow Arbitrary Loads  YES
+ *
+ */
 
+
+/* < 自定义公共类 > */
+#import "NetworkTools.h"
 #import "TextHighTools.h"
+#import "GenoryModel.h"
+#import "DetailModel.h"
+
+#import "GlobalStaticValues.h"
+
+/* < 三方类 > */
+#import <AFNetworking/AFNetworking.h>
+#import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <VTMagic/VTMagic.h>
+#import <Masonry/Masonry.h>
+#import <MJExtension/MJExtension.h>
+
+
+/* < 网络请求的参数 > */
+#define paramDic   @"showapi_appid":showapi_appid,@"showapi_sign":showapi_sign
+
+
+
+// 打印方法
+#define SLFunc SLLog(@"%s",__func__);
+// 自定义LOG
+#ifdef DEBUG // 调试阶段
+
+#define SLLog(...) NSLog(__VA_ARGS__);
+
+#else // 发布阶段
+
+#define SLLog(...)
+
+#endif
+
+
+/** 屏幕的宽 高 **/
+#define kselfWidth [UIScreen mainScreen].bounds.size.width
+#define kselfHeight [UIScreen mainScreen].bounds.size.height
+
 
 #endif /* PrefixHeader_pch */
