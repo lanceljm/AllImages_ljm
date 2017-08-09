@@ -18,6 +18,10 @@ target 'allkindsImages' do
 
     #刷新
     pod "MJRefresh"
+    
+    
+    #头部控件
+    pod "VTMagic"
 
 
 end
