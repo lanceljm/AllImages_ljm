@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
     dataArr = [NSMutableArray array];
-    myTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kselfWidth, kselfHeight - 50)];
     myTableView.backgroundColor = [UIColor clearColor];
     myTableView.delegate = self;
     myTableView.dataSource = self;
@@ -31,7 +31,8 @@
     myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:myTableView];
  
-    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:0.6f];
+    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:0.2f];
     
     [self loadDataSource];
     

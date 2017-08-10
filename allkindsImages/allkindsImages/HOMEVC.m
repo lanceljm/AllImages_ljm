@@ -61,7 +61,7 @@ static  NSString *SeventhIdentifier = @"SeventhIdentifier";
     self.magicView.separatorHidden = NO;
     /* < 选中当前的选项变大的比例 > */
     self.magicView.itemScale = 1.2f;
-    self.magicView.navigationColor = [UIColor whiteColor];
+    self.magicView.navigationColor = [UIColor blackColor];
     self.magicView.layoutStyle = VTLayoutStyleDefault;
     
     [self.magicView reloadData];
@@ -83,9 +83,9 @@ static  NSString *SeventhIdentifier = @"SeventhIdentifier";
     if (!menuItem) {
         menuItem = [[UIButton alloc] init];
         /* < 默认按钮的字体颜色 > */
-        [menuItem setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [menuItem setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         /* < 选中按钮的字体颜色 > */
-        [menuItem setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        [menuItem setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         /* < 按钮的字体大小 > */
         menuItem.titleLabel.font = [UIFont systemFontOfSize:15];
     }
