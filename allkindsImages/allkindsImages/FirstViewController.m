@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "HomeDetailViewController.h"
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -59,6 +60,24 @@
     cell.model = model;
     cell.backgroundColor = [UIColor clearColor];
     return cell;
+}
+
+#pragma mark -- uitablewview datasource
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    __weak typeof(self) weakself = self;
+    HomeModel *model = dataArr[indexPath.row];
+    [[NetworkTools shareTools] requestWithMethod:GET andURL:DetailURL andParameters:@{paramDic,@"type":model.id} andCallBack:^(id data, NSError *error) {
+        NSArray *dataArray = data[@"showapi_res_body"][@"pagebean"][@"contentlist"];
+        if (!error) {
+            SLLog(@"二级界面网络请求成功:%@",data);
+            HomeDetailViewController *hdvc = [[HomeDetailViewController alloc] init];
+            hdvc.detailHomeArr = [DetailModel mj_objectArrayWithKeyValuesArray:dataArray];
+            [weakself presentViewController:hdvc animated:YES completion:nil];
+        }else{
+            SLLog(@"二级界面网路请求失败:%@",error);
+        }
+    }];
 }
 
 #pragma mark -- 网络请求

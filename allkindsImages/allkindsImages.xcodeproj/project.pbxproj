@@ -14,6 +14,8 @@
 		1A2CB2021F3910F70060FDEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CB2001F3910F70060FDEA /* LaunchScreen.storyboard */; };
 		1A2CB20E1F39183D0060FDEA /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CB20D1F39183D0060FDEA /* NetworkTools.m */; };
 		1A2CB2111F391A020060FDEA /* TextHighTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CB2101F391A020060FDEA /* TextHighTools.m */; };
+		1A2EEFA01F3BF80000FDC2A7 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EEF9F1F3BF80000FDC2A7 /* DetailTableViewCell.m */; };
+		1A2EEFA41F3C0AA100FDC2A7 /* HomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EEFA31F3C0AA100FDC2A7 /* HomeDetailViewController.m */; };
 		3634B8781F3AB46200194774 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B8771F3AB46200194774 /* LoginViewController.m */; };
 		3634B87F1F3AD7DA00194774 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B87E1F3AD7DA00194774 /* DetailModel.m */; };
 		3634B8831F3AE78800194774 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B8821F3AE78800194774 /* HomeViewController.m */; };
@@ -46,6 +48,10 @@
 		1A2CB2101F391A020060FDEA /* TextHighTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextHighTools.m; sourceTree = "<group>"; };
 		1A2CB2131F3964370060FDEA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1A2CB2141F39F4280060FDEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1A2EEF9E1F3BF80000FDC2A7 /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
+		1A2EEF9F1F3BF80000FDC2A7 /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
+		1A2EEFA21F3C0AA100FDC2A7 /* HomeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDetailViewController.h; sourceTree = "<group>"; };
+		1A2EEFA31F3C0AA100FDC2A7 /* HomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDetailViewController.m; sourceTree = "<group>"; };
 		3634B8761F3AB46200194774 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3634B8771F3AB46200194774 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3634B87D1F3AD7DA00194774 /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
@@ -139,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				3634B8801F3AE69600194774 /* VTMgic */,
-				3634B8791F3AB8B000194774 /* model */,
 				3634B8751F3AAEED00194774 /* login */,
 				1A2CB2121F3964230060FDEA /* others */,
 				1A2CB20B1F3918180060FDEA /* tools */,
@@ -182,6 +187,24 @@
 			name = others;
 			sourceTree = "<group>";
 		};
+		1A2EEF9D1F3BF7D700FDC2A7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1A2EEF9E1F3BF80000FDC2A7 /* DetailTableViewCell.h */,
+				1A2EEF9F1F3BF80000FDC2A7 /* DetailTableViewCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		1A2EEFA11F3C089F00FDC2A7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				1A2EEFA21F3C0AA100FDC2A7 /* HomeDetailViewController.h */,
+				1A2EEFA31F3C0AA100FDC2A7 /* HomeDetailViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		3634B8751F3AAEED00194774 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,11 +226,12 @@
 		3634B8801F3AE69600194774 /* VTMgic */ = {
 			isa = PBXGroup;
 			children = (
+				1A2EEFA11F3C089F00FDC2A7 /* controller */,
+				1A2EEF9D1F3BF7D700FDC2A7 /* view */,
+				3634B8791F3AB8B000194774 /* model */,
 				3634B8811F3AE78800194774 /* HomeViewController.h */,
 				3634B8821F3AE78800194774 /* HomeViewController.m */,
-				3634B88B1F3B0CC400194774 /* HOMEVC.h */,
-				3634B88C1F3B0CC400194774 /* HOMEVC.m */,
-				3634B88E1F3BEFCE00194774 /* DetailVC */,
+				3634B88E1F3BEFCE00194774 /* Home */,
 			);
 			name = VTMgic;
 			sourceTree = "<group>";
@@ -221,14 +245,16 @@
 			name = view;
 			sourceTree = "<group>";
 		};
-		3634B88E1F3BEFCE00194774 /* DetailVC */ = {
+		3634B88E1F3BEFCE00194774 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3634B88B1F3B0CC400194774 /* HOMEVC.h */,
+				3634B88C1F3B0CC400194774 /* HOMEVC.m */,
 				3634B8841F3AE93D00194774 /* view */,
 				3634B8A51F3C508B00194774 /* model */,
 				3634B8A41F3C507400194774 /* controller */,
 			);
-			name = DetailVC;
+			name = Home;
 			sourceTree = "<group>";
 		};
 		3634B8A41F3C507400194774 /* controller */ = {
@@ -401,11 +427,13 @@
 				3634B8781F3AB46200194774 /* LoginViewController.m in Sources */,
 				1A2CB1F71F3910F70060FDEA /* AppDelegate.m in Sources */,
 				3634B89A1F3C4D7700194774 /* FourthViewController.m in Sources */,
+				1A2EEFA41F3C0AA100FDC2A7 /* HomeDetailViewController.m in Sources */,
 				3634B8971F3C4D6D00194774 /* ThirdViewController.m in Sources */,
 				3634B87F1F3AD7DA00194774 /* DetailModel.m in Sources */,
 				1A2CB1F41F3910F70060FDEA /* main.m in Sources */,
 				3634B8A01F3C4D9900194774 /* SixthViewController.m in Sources */,
 				3634B8911F3C4D5E00194774 /* FirstViewController.m in Sources */,
+				1A2EEFA01F3BF80000FDC2A7 /* DetailTableViewCell.m in Sources */,
 				1A2CB2111F391A020060FDEA /* TextHighTools.m in Sources */,
 				3634B88A1F3AF23A00194774 /* GlobalStaticValues.m in Sources */,
 				3634B8831F3AE78800194774 /* HomeViewController.m in Sources */,
