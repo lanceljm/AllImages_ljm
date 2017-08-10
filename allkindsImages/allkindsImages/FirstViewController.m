@@ -33,7 +33,7 @@
 
     [self loadDataSource];
 
-    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1.f];
+    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:0.6f];
 
     
 }
@@ -70,10 +70,10 @@
     [[NetworkTools shareTools] requestWithMethod:GET andURL:DetailURL andParameters:@{paramDic,@"type":model.id} andCallBack:^(id data, NSError *error) {
         NSArray *dataArray = data[@"showapi_res_body"][@"pagebean"][@"contentlist"];
         if (!error) {
-            SLLog(@"三级界面网络请求成功:%@",data);
+//            SLLog(@"三级界面网络请求成功:%@",data);
             [SVProgressHUD showSuccessWithStatus:@"三级界面网络请求成功"];
             HomeDetailViewController *hdvc = [[HomeDetailViewController alloc] init];
-//            SLLog(@"dataArray:::::::::::::::::::\n-\n-\n-\n-\n-\n-\n-\n-\n%@",dataArray);
+            SLLog(@"dataArray:::::::::::::::::::\n-\n-\n-\n-\n-\n-\n-\n-\n%@",dataArray);
             hdvc.detailHomeArr = [DetailModel mj_objectArrayWithKeyValuesArray:dataArray];
             UINavigationController *uvc = [[UINavigationController alloc] initWithRootViewController:hdvc];
             [weakself presentViewController:uvc animated:YES completion:nil];

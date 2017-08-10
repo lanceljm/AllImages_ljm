@@ -16,4 +16,9 @@
 
 @property (strong , nonatomic) DetailImageModel  * model;
 
+// 获取图片最大偏移量
+- (CGFloat)imageOverflowHeight;
+// 重新设置图片偏移量
+- (void)setImageOffset:(CGPoint)imageOffset;
+
 @end

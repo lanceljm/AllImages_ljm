@@ -34,4 +34,27 @@
     [_myImageView sd_setImageWithURL:[NSURL URLWithString:model.big]];
 }
 
+/**
+ *  返回图片大于imageView的高度
+ *
+ *  @return 图片大于imageView的高度
+ */
+- (CGFloat)imageOverflowHeight
+{
+    // 减200 是因为cell的高度设为200，所以直接写固定值了
+    return _myImageView.frame.size.height - kselfWidth * 1.2;
+}
+
+/**
+ *  设置imageView偏移量
+ *
+ *  @param imageOffset 偏移量
+ */
+- (void)setImageOffset:(CGPoint)imageOffset
+{
+    CGRect frame = _myImageView.frame;
+    frame.origin = imageOffset;
+    _myImageView.frame = frame;
+}
+
 @end

@@ -107,29 +107,27 @@
     SLLog(@"%@",model.type);
     [[NetworkTools shareTools] requestWithMethod:GET andURL:DetailURL andParameters:@{paramDic ,@"type":model.type} andCallBack:^(id data, NSError *error) {
         SLLog(@"四级界面请求的参数:%@",model.type);
-        SLLog(@"四级界面请求下来的数据:%@",data[@"showapi_res_body"][@"pagebean"][@"contentlist"]);
-        NSArray *dataArray = data[@"showapi_res_body"][@"pagebean"][@"contentlist"];
+//        SLLog(@"四级界面请求下来的数据:%@",data[@"showapi_res_body"][@"pagebean"][@"contentlist"]);
+        NSArray *dataArray = data[@"showapi_res_body"][@"pagebean"][@"contentlist"][indexPath.row][@"list"];
         if (!error) {
-            SLLog(@"四级界面图片请求成功:%@",dataArray);
-            NSMutableArray *mudataArr = [NSMutableArray array];
-            for (NSDictionary *dic in dataArray) {
-                [mudataArr addObject:dic[@"list"]];
-            }
-            SLLog(@"字典数组转模型数组前:%@",mudataArr);
-            NSMutableArray *mudataArray = [NSMutableArray array];
-            for (NSDictionary *dict in mudataArr) {
-                [mudataArray addObject:dict[@"big"]];
-            }
-
-            
+//            SLLog(@"四级界面图片请求成功:%@",dataArray);
+            [SVProgressHUD showSuccessWithStatus:@"四级界面网络请求成功"];
             HomeDetialImagesViewController *hvc = [[HomeDetialImagesViewController alloc] init];
-            hvc.detailModelArr = [DetailImageModel mj_objectArrayWithKeyValuesArray:mudataArray];
-            SLLog(@"字典数组转模型数组:%@",hvc.detailModelArr);
+            [hvc.detailModelArr removeAllObjects];
+            hvc.detailModelArr = [DetailImageModel mj_objectArrayWithKeyValuesArray:dataArray];
+//            SLLog(@"字典数组转模型数组:%@",hvc.detailModelArr);
             UINavigationController *uvc = [[UINavigationController alloc] initWithRootViewController:hvc];
+            dispatch_after(dispatch_time(1.f, (int64_t) (0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
             [weakself.navigationController presentViewController:uvc animated:YES completion:nil];
         }else
         {
             SLLog(@"四级界面图片请求失败:%@",error);
+            [SVProgressHUD showErrorWithStatus:@"四级界面网络请求失败"];
+            dispatch_after(dispatch_time(1.f, (int64_t) (0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
         }
     }];
 }

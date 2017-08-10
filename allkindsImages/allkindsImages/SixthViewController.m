@@ -31,15 +31,10 @@
     myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:myTableView];
   
-    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1.f];
+    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:0.6f];
 
     [self loadDataSource];
-    //    UILabel *tipLab = [[UILabel alloc] initWithFrame:CGRectMake(0 , 0, 200, 20)];
-//    tipLab.center = self.view.center;
-//    tipLab.textAlignment = NSTextAlignmentCenter;
-//    tipLab.text = getHeadWithArray[5];
-//    [self.view addSubview:tipLab];
-    
+
 }
 
 #pragma mark -- uitableview delegate

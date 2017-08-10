@@ -13,8 +13,8 @@
 /* < big > */
 @property (strong , nonatomic) NSString  * big;
 /* < small > */
-@property (strong , nonatomic) NSString  * small;
-/* < middle > */
-@property (strong , nonatomic) NSString  * middle;
+//@property (strong , nonatomic) NSString  * small;
+///* < middle > */
+//@property (strong , nonatomic) NSString  * middle;
 
 @end
