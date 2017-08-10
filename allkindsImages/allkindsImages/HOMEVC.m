@@ -7,8 +7,18 @@
 //
 
 #import "HOMEVC.h"
+#import "LoginViewController.h"
+
 
 static NSString *identifier = @"buttonIdentifier";
+
+static  NSString *FirstIdentifier = @"FirstIdentifier";
+static  NSString *SecondIdentifier = @"SecondIdentifier";
+static  NSString *ThirdIdentifier = @"ThirdIdentifier";
+static  NSString *FourthIdentifier = @"FourthIdentifier";
+static  NSString *FivthIdentifier = @"FivthIdentifier";
+static  NSString *SixthIdentifier = @"SixthIdentifier";
+static  NSString *SeventhIdentifier = @"SeventhIdentifier";
 
 @interface HOMEVC ()
 {
@@ -36,8 +46,11 @@ static NSString *identifier = @"buttonIdentifier";
     
     self.view.backgroundColor = [UIColor lightGrayColor];
     _datarr = [NSMutableArray new];
-
+    _datarr = self._modelDataArray;
+//    SLLog(@"%@",self._modelDataArray);
+    
     [self initVTMagic];
+    
 }
 
 - (void) initVTMagic
@@ -50,7 +63,6 @@ static NSString *identifier = @"buttonIdentifier";
     self.magicView.navigationColor = [UIColor whiteColor];
     self.magicView.layoutStyle = VTLayoutStyleDefault;
     
-    [self generateHeadData];
     [self.magicView reloadData];
     
 }
@@ -80,47 +92,92 @@ static NSString *identifier = @"buttonIdentifier";
     return menuItem;
 }
 
-#pragma mark -- VTMagicDelegate
-#pragma mark -- 点击选中了第几页
+#pragma mark -- 显示详细页面的视图
+- (UIViewController *) magicView:(VTMagicView *)magicView viewControllerAtPage:(NSUInteger)pageIndex
+{
+    switch (pageIndex) {
+        case 0:
+        {
+            FirstViewController *firstVC = [magicView dequeueReusablePageWithIdentifier:FirstIdentifier];
+            if (!firstVC) {
+                firstVC = [[FirstViewController alloc] init];
+            }
+            return firstVC;
+        }
+            break;
+        case 1:
+        {
+            SecondViewController *secondVC = [magicView dequeueReusablePageWithIdentifier:SecondIdentifier];
+            if (!secondVC) {
+                secondVC = [[SecondViewController alloc] init];
+            }
+            return secondVC;
+        }
+            break;
+            
+        case 2:
+        {
+            ThirdViewController *thirdVC = [magicView dequeueReusablePageWithIdentifier:ThirdIdentifier];
+            if (!thirdVC) {
+                thirdVC = [[ThirdViewController alloc] init];
+            }
+            return thirdVC;
+        }
+            break;
+        
+        case 3:
+        {
+            FourthViewController *fourthVC = [magicView dequeueReusablePageWithIdentifier:FourthIdentifier];
+            if (!fourthVC) {
+                fourthVC = [[FourthViewController alloc] init];
+            }
+            return fourthVC;
+        }
+            break;
+            
+        case 4:
+        {
+            FivthViewController *fivethVC = [magicView dequeueReusablePageWithIdentifier:FivthIdentifier];
+            if (!fivethVC) {
+                fivethVC = [[FivthViewController alloc] init];
+            }
+            return fivethVC;
+        }
+            break;
+            
+        case 5:
+        {
+            SixthViewController *sixthVC = [magicView dequeueReusablePageWithIdentifier:SixthIdentifier];
+            if (!sixthVC) {
+                sixthVC = [[SixthViewController alloc] init];
+            }
+            return sixthVC;
+        }
+            break;
+            
+        default:
+        {
+            SeventhViewController *seventhVC = [magicView dequeueReusablePageWithIdentifier:SeventhIdentifier];
+            if (!seventhVC) {
+                seventhVC = [[SeventhViewController alloc] init];
+            }
+            return seventhVC;
+        }
+            break;
+            
+    }
+}
+
+#pragma mark -- VTMagicDelegate  点击选中了第几页
 - (void)magicView:(VTMagicView *)magicView didSelectItemAtIndex:(NSUInteger)itemIndex {
-    NSLog(@"点击选中了第%lu页",(unsigned long)itemIndex);
+    SLLog(@"点击选中了第%lu页",(unsigned long)itemIndex);
     
 }
 
 #pragma mark -- 滑动选中了第几页
 - (void)magicView:(VTMagicView *)magicView viewDidAppear:(__kindof UIViewController *)viewController atPage:(NSUInteger)pageIndex {
-    NSLog(@"滑动选中了第%lu页",(unsigned long)pageIndex);
+    SLLog(@"滑动选中了第%lu页",(unsigned long)pageIndex);
 }
 
-#pragma mark -- 生成头部选项
-- (void) generateHeadData
-{
-    [[NetworkTools shareTools] requestWithMethod:GET andURL:GlobalURL andParameters:@{paramDic} andCallBack:^(id data, NSError *error) {
-        NSArray *dataArray = data[@"showapi_res_body"][@"list"];
-        if (!error) {
-            [SVProgressHUD showSuccessWithStatus:@"网络请求成功"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [SVProgressHUD dismiss];
-            });
-            SLLog(@"网络请求成功:%@",dataArray);
-            NSMutableArray *array = [NSMutableArray array];
-            [array removeAllObjects];
-            for (NSDictionary *dic in dataArray) {
-                SLLog(@"%@",dic[@"name"]);
-                [array addObject:dic[@"name"]];
-            }
-            _datarr = array;
-//            SLLog(@"%@",array);
-            [self.magicView reloadData];
-        }else
-        {
-            [SVProgressHUD showErrorWithStatus:@"网络请求错误"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [SVProgressHUD dismiss];
-            });
-            SLLog(@"error:%@",error);
-        }
-    }];
-}
 
 @end

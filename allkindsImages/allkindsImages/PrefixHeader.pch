@@ -21,6 +21,8 @@
 #import "TextHighTools.h"
 #import "GenoryModel.h"
 #import "DetailModel.h"
+#import "HomeModel.h"
+#import "GenoryTableViewCell.h"
 
 #import "GlobalStaticValues.h"
 
@@ -33,6 +35,15 @@
 #import <Masonry/Masonry.h>
 #import <MJExtension/MJExtension.h>
 
+
+/* < 自定义的7个控制器头文件 > */
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "ThirdViewController.h"
+#import "FourthViewController.h"
+#import "FivthViewController.h"
+#import "SixthViewController.h"
+#import "SeventhViewController.h"
 
 /* < 网络请求的参数 > */
 #define paramDic   @"showapi_appid":showapi_appid,@"showapi_sign":showapi_sign
@@ -57,5 +68,15 @@
 #define kselfWidth [UIScreen mainScreen].bounds.size.width
 #define kselfHeight [UIScreen mainScreen].bounds.size.height
 
+
+#pragma mark -- 标题头数组
+#define headWithArray @"headWithArray"
+
+
+#pragma mark -- 获取标题头数组
+#define getHeadWithArray  [[NSUserDefaults standardUserDefaults] objectForKey: headWithArray]
+
+/* < 定义放回请求数据的block类型 > */
+typedef void(^returnValueArr)(id returnArr);
 
 #endif /* PrefixHeader_pch */

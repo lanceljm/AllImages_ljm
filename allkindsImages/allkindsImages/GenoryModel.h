@@ -11,7 +11,7 @@
 @interface GenoryModel : NSObject
 
 /* < list > */
-@property (strong , nonatomic) NSArray  * list;
+@property (strong , nonatomic) NSString * id;
 
 /* < name > */
 @property (strong , nonatomic) NSString  * name;
@@ -21,6 +21,12 @@
 
 /* < name > */
 //@property (strong , nonatomic) NSString  * name;
+
+//- (instancetype) initWithDic : (NSDictionary *) dic;
+//+ (instancetype) genoryWithDic : (NSDictionary *) dic;
+
+
+
 @end
 
 

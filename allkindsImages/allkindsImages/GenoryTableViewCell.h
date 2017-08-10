@@ -14,6 +14,10 @@
 /* < 文本类名 > */
 @property (strong , nonatomic) UILabel  * namelab;
 
+/* < id名 > */
+@property (strong , nonatomic) UILabel  * idLab;
+
 @property (strong , nonatomic) GenoryModel * model;
+
 
 @end

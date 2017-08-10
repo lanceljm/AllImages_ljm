@@ -10,9 +10,21 @@
 
 @implementation GenoryModel
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key
-{
-    
-}
+//- (instancetype)initWithDic:(NSDictionary *)dic
+//{
+//    if (self = [super init]) {
+//        
+//        
+//        self.name = dic[@"name"];
+//        self.list = dic[@"list"];
+//    }
+//    return self;
+//}
+//
+//+ (instancetype)genoryWithDic:(NSDictionary *)dic
+//{
+//    return [[self alloc] initWithDic:dic];
+//}
+
 
 @end

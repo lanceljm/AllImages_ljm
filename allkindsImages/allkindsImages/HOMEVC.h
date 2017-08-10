@@ -10,4 +10,8 @@
 
 @interface HOMEVC : VTMagicController
 
+/* < 属性传值接收 > */
+@property (strong , nonatomic) NSMutableArray  * _modelDataArray;
+
+
 @end
