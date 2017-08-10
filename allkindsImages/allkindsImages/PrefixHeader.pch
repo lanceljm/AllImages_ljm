@@ -19,7 +19,6 @@
 /* < 自定义公共类 > */
 #import "NetworkTools.h"
 #import "TextHighTools.h"
-#import "GenoryModel.h"
 #import "DetailModel.h"
 #import "HomeModel.h"
 #import "GenoryTableViewCell.h"
@@ -37,6 +36,13 @@
 
 
 /* < 自定义的7个控制器头文件 > */
+#pragma mark -- model
+#import "HomeModel.h"
+
+#pragma mark -- view
+#import "GenoryTableViewCell.h"
+
+#pragma mark -- controller
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
@@ -44,6 +50,8 @@
 #import "FivthViewController.h"
 #import "SixthViewController.h"
 #import "SeventhViewController.h"
+
+
 
 /* < 网络请求的参数 > */
 #define paramDic   @"showapi_appid":showapi_appid,@"showapi_sign":showapi_sign

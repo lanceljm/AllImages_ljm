@@ -23,6 +23,7 @@
     
     dataArr = [NSMutableArray array];
     myTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    myTableView.backgroundColor = [UIColor clearColor];
     myTableView.delegate = self;
     myTableView.dataSource = self;
     myTableView.rowHeight = 60.f;
@@ -58,8 +59,9 @@
     if (!cell) {
         cell = [[GenoryTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
     }
-    GenoryModel *model = dataArr[indexPath.row];
+    HomeModel *model = dataArr[indexPath.row];
     cell.model = model;
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
@@ -67,14 +69,10 @@
 - (void) loadDataSource
 {
     [[NetworkTools shareTools] requestWithMethod:GET andURL:GlobalURL andParameters:@{paramDic} andCallBack:^(id data, NSError *error) {
-        NSArray *dataArray = data[@"showapi_res_body"][@"list"];
-        NSArray *detailArr = [NSArray array];
-        for (NSDictionary *dic in dataArray) {
-            detailArr = dic[@"list"];
-        }
+        NSArray *dataArray = data[@"showapi_res_body"][@"list"][4][@"list"];
         if (!error) {
-            SLLog(@"%@",detailArr);
-            dataArr = [GenoryModel mj_objectArrayWithKeyValuesArray:detailArr];
+            SLLog(@"%@",dataArray);
+            dataArr = [HomeModel mj_objectArrayWithKeyValuesArray:dataArray];
             [myTableView reloadData];
         }else{
             SLLog(@"%@",error);

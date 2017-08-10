@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 #import "GenoryTableViewCell.h"
-#import "GenoryModel.h"
+
 
 static NSString *cellID = @"cellId";
 
@@ -61,8 +61,8 @@ static NSString *cellID = @"cellId";
     if (!cell) {
         cell = [[GenoryTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    GenoryModel *model = _dataArr[indexPath.row];
-    cell.model = model;
+//    GenoryModel *model = _dataArr[indexPath.row];
+//    cell.model = model;
     
     return cell;
 }
@@ -76,7 +76,7 @@ static NSString *cellID = @"cellId";
         /* < 网络请求成功 > */
         if (!error) {
             SLLog(@"+++++++++++++++++++\n网络请求成功：%@",dataArray);
-            _dataArr = [GenoryModel mj_objectArrayWithKeyValuesArray:dataArray];
+//            _dataArr = [GenoryModel mj_objectArrayWithKeyValuesArray:dataArray];
             [_myTableview reloadData];
 //            SLLog(@"此时模型中的数据是:%@",_dataArr);
         }else

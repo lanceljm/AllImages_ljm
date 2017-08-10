@@ -48,7 +48,7 @@
 }
 
 #pragma mark -- 赋值
-- (void)setModel:(GenoryModel *)model
+- (void)setModel:(HomeModel *)model
 {
     /* < 最重要的赋值 > */
     _model = model;

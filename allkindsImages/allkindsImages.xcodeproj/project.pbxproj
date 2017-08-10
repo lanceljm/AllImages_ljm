@@ -15,7 +15,6 @@
 		1A2CB20E1F39183D0060FDEA /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CB20D1F39183D0060FDEA /* NetworkTools.m */; };
 		1A2CB2111F391A020060FDEA /* TextHighTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CB2101F391A020060FDEA /* TextHighTools.m */; };
 		3634B8781F3AB46200194774 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B8771F3AB46200194774 /* LoginViewController.m */; };
-		3634B87C1F3AD7B200194774 /* GenoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B87B1F3AD7B200194774 /* GenoryModel.m */; };
 		3634B87F1F3AD7DA00194774 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B87E1F3AD7DA00194774 /* DetailModel.m */; };
 		3634B8831F3AE78800194774 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B8821F3AE78800194774 /* HomeViewController.m */; };
 		3634B8871F3AE96800194774 /* GenoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B8861F3AE96800194774 /* GenoryTableViewCell.m */; };
@@ -49,8 +48,6 @@
 		1A2CB2141F39F4280060FDEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3634B8761F3AB46200194774 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3634B8771F3AB46200194774 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		3634B87A1F3AD7B200194774 /* GenoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenoryModel.h; sourceTree = "<group>"; };
-		3634B87B1F3AD7B200194774 /* GenoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenoryModel.m; sourceTree = "<group>"; };
 		3634B87D1F3AD7DA00194774 /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
 		3634B87E1F3AD7DA00194774 /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		3634B8811F3AE78800194774 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -199,8 +196,6 @@
 			children = (
 				3634B87D1F3AD7DA00194774 /* DetailModel.h */,
 				3634B87E1F3AD7DA00194774 /* DetailModel.m */,
-				3634B87A1F3AD7B200194774 /* GenoryModel.h */,
-				3634B87B1F3AD7B200194774 /* GenoryModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -401,7 +396,6 @@
 				3634B89D1F3C4D8100194774 /* FivthViewController.m in Sources */,
 				1A2CB20E1F39183D0060FDEA /* NetworkTools.m in Sources */,
 				3634B8941F3C4D6600194774 /* SecondViewController.m in Sources */,
-				3634B87C1F3AD7B200194774 /* GenoryModel.m in Sources */,
 				3634B8A31F3C4DAD00194774 /* SeventhViewController.m in Sources */,
 				3634B8871F3AE96800194774 /* GenoryTableViewCell.m in Sources */,
 				3634B8781F3AB46200194774 /* LoginViewController.m in Sources */,
@@ -543,6 +537,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/allkindsImages/PrefixHeader.pch";
 				INFOPLIST_FILE = allkindsImages/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ljm.ynyx.allkindsImages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,6 +553,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/allkindsImages/PrefixHeader.pch";
 				INFOPLIST_FILE = allkindsImages/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ljm.ynyx.allkindsImages;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GenoryModel.h"
 
 @interface GenoryTableViewCell : UITableViewCell
 
@@ -17,7 +16,7 @@
 /* < id名 > */
 @property (strong , nonatomic) UILabel  * idLab;
 
-@property (strong , nonatomic) GenoryModel * model;
+@property (strong , nonatomic) HomeModel * model;
 
 
 @end
