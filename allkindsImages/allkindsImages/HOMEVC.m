@@ -22,8 +22,13 @@ static NSString *identifier = @"buttonIdentifier";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    self.navigationController.navigationBarHidden = YES;
     [UIApplication sharedApplication].statusBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -41,7 +46,7 @@ static NSString *identifier = @"buttonIdentifier";
     /* < 是否隐藏分割线 > */
     self.magicView.separatorHidden = NO;
     /* < 选中当前的选项变大的比例 > */
-    self.magicView.itemScale = 1.5f;
+    self.magicView.itemScale = 1.2f;
     self.magicView.navigationColor = [UIColor whiteColor];
     self.magicView.layoutStyle = VTLayoutStyleDefault;
     
@@ -64,9 +69,12 @@ static NSString *identifier = @"buttonIdentifier";
     
     if (!menuItem) {
         menuItem = [[UIButton alloc] init];
+        /* < 默认按钮的字体颜色 > */
         [menuItem setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        /* < 选中按钮的字体颜色 > */
         [menuItem setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-        menuItem.titleLabel.font = [UIFont systemFontOfSize:18];
+        /* < 按钮的字体大小 > */
+        menuItem.titleLabel.font = [UIFont systemFontOfSize:15];
     }
     [menuItem setTitle:_datarr[itemIndex] forState:UIControlStateNormal];
     return menuItem;

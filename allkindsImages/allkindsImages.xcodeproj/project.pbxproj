@@ -189,6 +189,7 @@
 				3634B8821F3AE78800194774 /* HomeViewController.m */,
 				3634B88B1F3B0CC400194774 /* HOMEVC.h */,
 				3634B88C1F3B0CC400194774 /* HOMEVC.m */,
+				3634B88E1F3BEFCE00194774 /* DetailVC */,
 			);
 			name = VTMgic;
 			sourceTree = "<group>";
@@ -200,6 +201,13 @@
 				3634B8861F3AE96800194774 /* GenoryTableViewCell.m */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		3634B88E1F3BEFCE00194774 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DetailVC;
 			sourceTree = "<group>";
 		};
 		80C81FB7053F89FE14A47109 /* Pods */ = {
