@@ -13,4 +13,5 @@
 /** 接收网络请求成功的数组 **/
 @property (nonatomic,strong) NSMutableArray *detailHomeArr;
 
+
 @end

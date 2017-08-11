@@ -38,7 +38,7 @@ static  NSString *SeventhIdentifier = @"SeventhIdentifier";
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-//    [UIApplication sharedApplication].statusBarHidden = NO;
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 - (void)viewDidLoad {

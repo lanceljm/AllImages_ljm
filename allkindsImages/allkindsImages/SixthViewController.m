@@ -74,13 +74,22 @@
     [[NetworkTools shareTools] requestWithMethod:GET andURL:DetailURL andParameters:@{paramDic,@"type":model.id} andCallBack:^(id data, NSError *error) {
         NSArray *dataArray = data[@"showapi_res_body"][@"pagebean"][@"contentlist"];
         if (!error) {
-            SLLog(@"二级界面网络请求成功:%@",data);
+            SLLog(@"三级界面网络请求成功:%@",data);
+            [SVProgressHUD showSuccessWithStatus:@"三级界面网络请求成功"];
             HomeDetailViewController *hdvc = [[HomeDetailViewController alloc] init];
             hdvc.detailHomeArr = [DetailModel mj_objectArrayWithKeyValuesArray:dataArray];
-            [weakself presentViewController:hdvc animated:YES completion:nil];
-            //            [weakself.navigationController presentViewController:hdvc animated:YES completion:nil];
+            UINavigationController *uvc = [[UINavigationController alloc] initWithRootViewController:hdvc];
+            [weakself presentViewController:uvc animated:YES completion:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
+            
         }else{
-            SLLog(@"二级界面网路请求失败:%@",error);
+            SLLog(@"三级界面网路请求失败:%@",error);
+            [SVProgressHUD showErrorWithStatus:@"三级界面网络请求失败"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
         }
     }];
 }
@@ -92,10 +101,18 @@
         NSArray *dataArray = data[@"showapi_res_body"][@"list"][5][@"list"];
         if (!error) {
             SLLog(@"%@",dataArray);
+            [SVProgressHUD showSuccessWithStatus:@"二级界面网络请求成功"];
             dataArr = [HomeModel mj_objectArrayWithKeyValuesArray:dataArray];
             [myTableView reloadData];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
         }else{
             SLLog(@"%@",error);
+            [SVProgressHUD showErrorWithStatus:@"二级界面网络请求失败"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
         }
     }];
 }

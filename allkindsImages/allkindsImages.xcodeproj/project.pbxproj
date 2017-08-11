@@ -30,6 +30,9 @@
 		3634B8A01F3C4D9900194774 /* SixthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B89F1F3C4D9900194774 /* SixthViewController.m */; };
 		3634B8A31F3C4DAD00194774 /* SeventhViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B8A21F3C4DAD00194774 /* SeventhViewController.m */; };
 		3634B8A91F3C518600194774 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3634B8A81F3C518600194774 /* HomeModel.m */; };
+		368FC82D1F3D59830057D178 /* DetailImagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 368FC82C1F3D59830057D178 /* DetailImagesTableViewCell.m */; };
+		368FC8301F3D5B500057D178 /* HomeDetialImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368FC82F1F3D5B500057D178 /* HomeDetialImagesViewController.m */; };
+		368FC8331F3D7AD40057D178 /* DetailImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 368FC8321F3D7AD40057D178 /* DetailImageModel.m */; };
 		DA261D5FBFF7DDA2520E5903 /* libPods-allkindsImages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F14DDF79E005CD2C1CDB391 /* libPods-allkindsImages.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,12 @@
 		3634B8A21F3C4DAD00194774 /* SeventhViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeventhViewController.m; sourceTree = "<group>"; };
 		3634B8A71F3C518600194774 /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		3634B8A81F3C518600194774 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		368FC82B1F3D59830057D178 /* DetailImagesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailImagesTableViewCell.h; sourceTree = "<group>"; };
+		368FC82C1F3D59830057D178 /* DetailImagesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailImagesTableViewCell.m; sourceTree = "<group>"; };
+		368FC82E1F3D5B500057D178 /* HomeDetialImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDetialImagesViewController.h; sourceTree = "<group>"; };
+		368FC82F1F3D5B500057D178 /* HomeDetialImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDetialImagesViewController.m; sourceTree = "<group>"; };
+		368FC8311F3D7AD40057D178 /* DetailImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailImageModel.h; sourceTree = "<group>"; };
+		368FC8321F3D7AD40057D178 /* DetailImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailImageModel.m; sourceTree = "<group>"; };
 		9F14DDF79E005CD2C1CDB391 /* libPods-allkindsImages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-allkindsImages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76107C554CEFD9DAE4C9F94 /* Pods-allkindsImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allkindsImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-allkindsImages/Pods-allkindsImages.release.xcconfig"; sourceTree = "<group>"; };
 		DF1F6B27C9ED650A44363C9C /* Pods-allkindsImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allkindsImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-allkindsImages/Pods-allkindsImages.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +201,8 @@
 			children = (
 				1A2EEF9E1F3BF80000FDC2A7 /* DetailTableViewCell.h */,
 				1A2EEF9F1F3BF80000FDC2A7 /* DetailTableViewCell.m */,
+				368FC82B1F3D59830057D178 /* DetailImagesTableViewCell.h */,
+				368FC82C1F3D59830057D178 /* DetailImagesTableViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -201,6 +212,8 @@
 			children = (
 				1A2EEFA21F3C0AA100FDC2A7 /* HomeDetailViewController.h */,
 				1A2EEFA31F3C0AA100FDC2A7 /* HomeDetailViewController.m */,
+				368FC82E1F3D5B500057D178 /* HomeDetialImagesViewController.h */,
+				368FC82F1F3D5B500057D178 /* HomeDetialImagesViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -219,6 +232,8 @@
 			children = (
 				3634B87D1F3AD7DA00194774 /* DetailModel.h */,
 				3634B87E1F3AD7DA00194774 /* DetailModel.m */,
+				368FC8311F3D7AD40057D178 /* DetailImageModel.h */,
+				368FC8321F3D7AD40057D178 /* DetailImageModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -426,6 +441,7 @@
 				3634B8871F3AE96800194774 /* GenoryTableViewCell.m in Sources */,
 				3634B8781F3AB46200194774 /* LoginViewController.m in Sources */,
 				1A2CB1F71F3910F70060FDEA /* AppDelegate.m in Sources */,
+				368FC8331F3D7AD40057D178 /* DetailImageModel.m in Sources */,
 				3634B89A1F3C4D7700194774 /* FourthViewController.m in Sources */,
 				1A2EEFA41F3C0AA100FDC2A7 /* HomeDetailViewController.m in Sources */,
 				3634B8971F3C4D6D00194774 /* ThirdViewController.m in Sources */,
@@ -433,7 +449,9 @@
 				1A2CB1F41F3910F70060FDEA /* main.m in Sources */,
 				3634B8A01F3C4D9900194774 /* SixthViewController.m in Sources */,
 				3634B8911F3C4D5E00194774 /* FirstViewController.m in Sources */,
+				368FC8301F3D5B500057D178 /* HomeDetialImagesViewController.m in Sources */,
 				1A2EEFA01F3BF80000FDC2A7 /* DetailTableViewCell.m in Sources */,
+				368FC82D1F3D59830057D178 /* DetailImagesTableViewCell.m in Sources */,
 				1A2CB2111F391A020060FDEA /* TextHighTools.m in Sources */,
 				3634B88A1F3AF23A00194774 /* GlobalStaticValues.m in Sources */,
 				3634B8831F3AE78800194774 /* HomeViewController.m in Sources */,

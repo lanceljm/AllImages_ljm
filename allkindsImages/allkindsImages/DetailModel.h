@@ -17,14 +17,7 @@
 @property (strong , nonatomic) NSString  * title;
 
 /* < list > */
-@property (strong , nonatomic) NSDictionary  * list;
-
-/* < big > */
-@property (strong , nonatomic) NSString  * big;
-/* < small > */
-@property (strong , nonatomic) NSString  * small;
-/* < middle > */
-@property (strong , nonatomic) NSString  * middle;
+@property (strong , nonatomic) NSString  * list;
 
 /* < itemId > */
 @property (strong , nonatomic) NSString  * itemId;
